@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stages{
+        stage("Checkout"){
+            steps{
+                
+            }
+        }
+        stage("UNIT Testing"){
+            steps{
+                sh 'mvn clean test' 
+            }
+        }
+        stage('Integration Testing'){
+            steps{
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
